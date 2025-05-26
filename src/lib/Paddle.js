@@ -1,4 +1,4 @@
-export default (ctx, canvas, paddleProps) => {
+const PaddleLogic = (ctx, canvas, paddleProps) => {
   class Paddle {
     constructor(x) {
       this.x = x;
@@ -14,7 +14,6 @@ export default (ctx, canvas, paddleProps) => {
       ctx.fillStyle = this.broke ? "white" : this.colors[1];
       ctx.strokeStyle = this.broke ? "white" : "red";
       ctx.lineWidth = 1;
-      ctx.fillStyle = this.broke ? "white" : this.colors[1];
       ctx.shadowBlur = 0;
       ctx.shadowColor = "blue";
       ctx.strokeRect(this.x, this.y, this.width, this.height);
@@ -30,3 +29,6 @@ export default (ctx, canvas, paddleProps) => {
     paddleProps.x = canvas.width - paddleProps.width;
   }
 };
+
+export default PaddleLogic;
+
